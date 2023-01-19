@@ -4,10 +4,10 @@ const userRouter = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-// userRouter.get("/", async (req, res) => {
-//   const all = await Usermodel.find();
-//   res.send("user here", all);
-// });
+userRouter.get("/", async (req, res) => {
+  const all = await Usermodel.find();
+  res.send("user here", all);
+});
 
 userRouter.post("/signup", async (req, res) => {
   const { email, password } = req.body;
